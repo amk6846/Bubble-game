@@ -1,4 +1,4 @@
-var timer = 60;
+var timer = 15;
 var rn;
 var score = 0;
 function makebubble(){
@@ -9,6 +9,7 @@ for(i = 1; i<=175; i++)
     barbar += `<div class="bubble">${rn}</div>`;
 }
 document.querySelector(".panelbottom").innerHTML = barbar;
+document.getElementById('gameSound').play();
 }
 function TimerRun(){
     var time = setInterval( function() {
@@ -18,7 +19,7 @@ function TimerRun(){
             document.querySelector("#timerval").textContent = timer;
         }
         else{
-
+            document.getElementById('gameover').play();
             clearInterval(time);
             document.querySelector(".panelbottom").innerHTML = `<h1>Game Over</h1>`;
         }
